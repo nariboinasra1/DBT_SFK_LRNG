@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo # The logical name for your source (used in `{{ source() }}`)
+    database: demo     # Optional: Specifies the database (if different from your target)
+    schema: demo_schema    # Optional: Specifies the schema (if different from the 'name')
+    tables:
+      - name: weather    # The name of the raw table in your warehouse
+      - name: bike # Another raw table name
