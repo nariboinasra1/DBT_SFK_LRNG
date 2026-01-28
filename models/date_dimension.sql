@@ -6,7 +6,8 @@ with CTE AS (
          then 'Weekend'
          else 'Business_Day'
          end as dayname,
-    month(to_timestamp_ntz(started_at)) month 
+    month(to_timestamp_ntz(started_at)) month,
+    {{get_season('started_at')}} 
 
     FROM {{ source('demo', 'bike') }}
     where started_at!='started_at'
